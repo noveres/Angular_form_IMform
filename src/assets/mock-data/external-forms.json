@@ -1,0 +1,160 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "心理測驗問卷 A",
+      "description": "這是一份探索性格特質的心理測驗",
+      "createdAt": "2024-12-24T08:00:00Z",
+      "updatedAt": "2024-12-24T08:00:00Z",
+      "status": "ACTIVE",
+      "choices": [
+        {
+          "userId": "user1",
+          "username": "張小明",
+          "choiceType": "BRAVE",
+          "timestamp": "2024-12-24T08:15:00Z"
+        },
+        {
+          "userId": "user2",
+          "username": "李小華",
+          "choiceType": "KIND",
+          "timestamp": "2024-12-24T08:30:00Z"
+        },
+        {
+          "userId": "user3",
+          "username": "王大明",
+          "choiceType": "CLEVER",
+          "timestamp": "2024-12-24T09:00:00Z"
+        }
+      ],
+      "statistics": {
+        "BRAVE": 15,
+        "CAUTIOUS": 8,
+        "CLEVER": 12,
+        "KIND": 10,
+        "NEUTRAL": 5
+      },
+      "metadata": {
+        "category": "性格測試",
+        "tags": ["心理", "性格", "自我認知"]
+      }
+    },
+    {
+      "id": "2",
+      "name": "團隊合作傾向測驗",
+      "description": "評估個人在團隊中的行為模式和決策傾向",
+      "createdAt": "2024-12-23T10:00:00Z",
+      "updatedAt": "2024-12-24T09:30:00Z",
+      "status": "ACTIVE",
+      "choices": [
+        {
+          "userId": "user4",
+          "username": "陳小玉",
+          "choiceType": "CAUTIOUS",
+          "timestamp": "2024-12-23T10:30:00Z"
+        },
+        {
+          "userId": "user5",
+          "username": "林小美",
+          "choiceType": "KIND",
+          "timestamp": "2024-12-23T11:00:00Z"
+        }
+      ],
+      "statistics": {
+        "BRAVE": 20,
+        "CAUTIOUS": 25,
+        "CLEVER": 18,
+        "KIND": 22,
+        "NEUTRAL": 15
+      },
+      "metadata": {
+        "category": "團隊合作",
+        "tags": ["團隊", "合作", "領導力"]
+      }
+    },
+    {
+      "id": "3",
+      "name": "壓力應對方式評估",
+      "description": "了解個人在面對壓力時的反應模式",
+      "createdAt": "2024-12-22T14:00:00Z",
+      "updatedAt": "2024-12-24T10:00:00Z",
+      "status": "DRAFT",
+      "choices": [
+        {
+          "userId": "user6",
+          "username": "黃小琳",
+          "choiceType": "NEUTRAL",
+          "timestamp": "2024-12-22T15:00:00Z"
+        }
+      ],
+      "statistics": {
+        "BRAVE": 12,
+        "CAUTIOUS": 30,
+        "CLEVER": 15,
+        "KIND": 18,
+        "NEUTRAL": 25
+      },
+      "metadata": {
+        "category": "壓力管理",
+        "tags": ["壓力", "情緒", "自我管理"]
+      }
+    },
+    {
+      "id": "4",
+      "name": "決策風格分析",
+      "description": "評估個人在做決策時的思考模式和傾向",
+      "createdAt": "2024-12-21T09:00:00Z",
+      "updatedAt": "2024-12-24T11:00:00Z",
+      "status": "INACTIVE",
+      "choices": [
+        {
+          "userId": "user7",
+          "username": "吳小芳",
+          "choiceType": "CLEVER",
+          "timestamp": "2024-12-21T10:00:00Z"
+        }
+      ],
+      "statistics": {
+        "BRAVE": 28,
+        "CAUTIOUS": 22,
+        "CLEVER": 35,
+        "KIND": 15,
+        "NEUTRAL": 10
+      },
+      "metadata": {
+        "category": "決策分析",
+        "tags": ["決策", "分析", "判斷力"]
+      }
+    },
+    {
+      "id": "5",
+      "name": "人際互動模式測驗",
+      "description": "探索個人在社交場合中的行為模式",
+      "createdAt": "2024-12-20T13:00:00Z",
+      "updatedAt": "2024-12-24T12:00:00Z",
+      "status": "ACTIVE",
+      "choices": [
+        {
+          "userId": "user8",
+          "username": "趙小龍",
+          "choiceType": "KIND",
+          "timestamp": "2024-12-20T14:00:00Z"
+        }
+      ],
+      "statistics": {
+        "BRAVE": 16,
+        "CAUTIOUS": 18,
+        "CLEVER": 20,
+        "KIND": 28,
+        "NEUTRAL": 8
+      },
+      "metadata": {
+        "category": "人際關係",
+        "tags": ["社交", "溝通", "人際"]
+      }
+    }
+  ],
+  "total": 5,
+  "page": 1,
+  "pageSize": 10
+}

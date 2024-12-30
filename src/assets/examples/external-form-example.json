@@ -1,0 +1,148 @@
+{
+  "name": "性格特質評估問卷",
+  "description": "這是一份用於評估個人性格特質傾向的問卷。通過分析回答者在不同情境下的選擇，了解其性格特點。",
+  "choices": [
+    {
+      "userId": "user123",
+      "username": "張小明",
+      "choiceType": "BRAVE",
+      "timestamp": "2024-12-24T08:15:00Z",
+      "questionContext": "面對挑戰時，你會選擇..."
+    },
+    {
+      "userId": "user456",
+      "username": "李小華",
+      "choiceType": "CAUTIOUS",
+      "timestamp": "2024-12-24T08:30:00Z",
+      "questionContext": "在團隊決策中，你通常會..."
+    },
+    {
+      "userId": "user789",
+      "username": "王大明",
+      "choiceType": "CLEVER",
+      "timestamp": "2024-12-24T09:00:00Z",
+      "questionContext": "解決問題時，你傾向於..."
+    },
+    {
+      "userId": "user101",
+      "username": "陳小玉",
+      "choiceType": "KIND",
+      "timestamp": "2024-12-24T09:15:00Z",
+      "questionContext": "當同事遇到困難時，你會..."
+    },
+    {
+      "userId": "user102",
+      "username": "林小美",
+      "choiceType": "NEUTRAL",
+      "timestamp": "2024-12-24T09:30:00Z",
+      "questionContext": "在衝突情況下，你會..."
+    }
+  ],
+  "metadata": {
+    "category": "性格測試",
+    "tags": ["性格", "心理", "自我認知", "團隊合作"],
+    "version": "1.0",
+    "author": "心理測評研究組",
+    "createdDate": "2024-12-24",
+    "targetAudience": "一般職場人士",
+    "estimatedTime": "15分鐘",
+    "questionCount": 20,
+    "languages": ["zh-TW"]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "text": "在一個重要的團隊項目中，你發現一個可能影響項目成功的問題，你會：",
+      "options": [
+        {
+          "type": "BRAVE",
+          "text": "立即向團隊提出問題，並主動提供解決方案"
+        },
+        {
+          "type": "CAUTIOUS",
+          "text": "仔細評估問題的影響範圍後再決定如何處理"
+        },
+        {
+          "type": "CLEVER",
+          "text": "分析多個可能的解決方案，尋找最佳處理方式"
+        },
+        {
+          "type": "KIND",
+          "text": "考慮如何在不影響團隊氣氛的情況下解決問題"
+        },
+        {
+          "type": "NEUTRAL",
+          "text": "遵循標準流程報告問題"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "當你的同事提出一個你認為有風險的提案時，你會：",
+      "options": [
+        {
+          "type": "BRAVE",
+          "text": "直接指出問題所在，提出改進建議"
+        },
+        {
+          "type": "CAUTIOUS",
+          "text": "提醒可能的風險，建議進行更多評估"
+        },
+        {
+          "type": "CLEVER",
+          "text": "分析利弊，提出優化方案"
+        },
+        {
+          "type": "KIND",
+          "text": "以建設性的方式討論如何改進"
+        },
+        {
+          "type": "NEUTRAL",
+          "text": "保持開放態度，聽取各方意見"
+        }
+      ]
+    }
+  ],
+  "scoringCriteria": {
+    "BRAVE": {
+      "description": "勇敢、果斷、直接表達",
+      "characteristics": [
+        "善於面對挑戰",
+        "決策果斷",
+        "敢於承擔責任"
+      ]
+    },
+    "CAUTIOUS": {
+      "description": "謹慎、周詳、注重細節",
+      "characteristics": [
+        "深思熟慮",
+        "風險意識強",
+        "注重計劃"
+      ]
+    },
+    "CLEVER": {
+      "description": "智慧、分析、策略性思考",
+      "characteristics": [
+        "善於分析",
+        "解決問題能力強",
+        "具有創新思維"
+      ]
+    },
+    "KIND": {
+      "description": "友善、體貼、重視和諧",
+      "characteristics": [
+        "富有同理心",
+        "善於溝通",
+        "團隊合作"
+      ]
+    },
+    "NEUTRAL": {
+      "description": "中立、客觀、平衡",
+      "characteristics": [
+        "客觀公正",
+        "適應性強",
+        "靈活變通"
+      ]
+    }
+  }
+}

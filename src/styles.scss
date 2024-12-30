@@ -1,0 +1,112 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}/* You can add global styles to this file, and also import other style files */
+
+/* Critical styles */
+html, body { 
+  height: 100%; 
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body { 
+  margin: 0; 
+  font-family: 'Noto Sans TC', Roboto, "Helvetica Neue", sans-serif;
+  position: relative;
+  background-color: #f5f5f5;
+  opacity: 1 !important;
+}
+
+/* Layout styles */
+// 主容器樣式
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease-in-out;
+  opacity: 1 !important;
+  
+  &.sidebar-collapsed {
+    .sidebar {
+      width: 60px;
+    }
+  }
+}
+
+/* Content styles */
+// 確保內容在加載時不會閃爍
+.content-wrapper {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+  background-color: #ffffff;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 1 !important;
+}
+
+/* Animation styles */
+// 頁面切換動畫
+.fade-in {
+  animation: none !important;
+  opacity: 1 !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Router outlet styles */
+// Router outlet 容器
+router-outlet + * {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  min-height: 100vh;
+  opacity: 1 !important;
+}
+
+/* Login page styles */
+// 登錄頁面特殊處理
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  opacity: 1 !important;
+}
+
+/* Hide loading spinner when app is loaded */
+app-root:not(:empty) + .app-loading {
+  display: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
