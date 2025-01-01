@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
-//下次修好登錄介面要刷新才能正常顯示的問題
 
->>>>>>> b5099c3 (Initial commit with all files)
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -24,6 +21,11 @@ export class AppComponent implements OnInit {
   hasNotifications = true;
   currentPage = '';
   isLoginPage = false;
+  title: any;
+  initialNavigation: boolean | undefined;
+  toggleSidebar() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+  }
 
   constructor(
     private authService: AuthService,
@@ -32,40 +34,30 @@ export class AppComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
+
+      this.initialNavigation = true;
+
       this.currentPage = this.getPageTitle(event.url);
-<<<<<<< HEAD
-      this.isLoginPage = event.url === '/login';
-    });
-  }
-=======
       this.isLoginPage = event.url == '/login';
+
+      if (event.url === '/' || event.url === '') {
+        window.location.reload();
+      }
     });
   }
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
 
-
-
->>>>>>> b5099c3 (Initial commit with all files)
-
   ngOnInit() {
     this.authService.currentUser$.subscribe(user => {
       this.currentUser = user;
-<<<<<<< HEAD
-      if (user && this.router.url === '/login') {
-        this.router.navigate(['/dashboard']);
-=======
       if (user && this.router.url == '/login') {
         this.router.navigate(['/new/dashboard']);
->>>>>>> b5099c3 (Initial commit with all files)
       }
     });
   }
 
-  toggleSidebar() {
-    this.isSidebarCollapsed = !this.isSidebarCollapsed;
-  }
 
   getPageTitle(url: string): string {
     if (url.includes('dashboard')) return '儀表板';
