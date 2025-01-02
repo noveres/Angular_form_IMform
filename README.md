@@ -34,5 +34,5 @@
 ### 安裝步驟
 1. Clone 此專案到本地端：
    ```bash
-    git clone https://github.com/noveres/Angular_form_IMform.git
-   cd Angular_form_IMform
+   git clone https://github.com/your-repo/form-management-system.git
+   cd form-management-system
