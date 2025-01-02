@@ -18,19 +18,12 @@ import { CommonModule, DecimalPipe } from '@angular/common';
       <div class="analytics-card">
         <h3>選擇類型分布</h3>
         <div class="distribution-list">
-<<<<<<< HEAD
-          <div *ngFor="let item of selectionDistribution | keyvalue" class="distribution-item">
-            <span class="label">{{ item.key }}</span>
-            <span class="value">{{ item.value }}次</span>
-          </div>
-=======
           @for (item of selectionDistribution | keyvalue; track item.key) {
             <div class="distribution-item">
               <span class="label">{{ item.key }}</span>
               <span class="value">{{ item.value }}次</span>
             </div>
           }
->>>>>>> b5099c3 (Initial commit with all files)
         </div>
       </div>
 

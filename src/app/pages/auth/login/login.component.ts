@@ -3,29 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-<<<<<<< HEAD
-=======
 import { Subscription } from 'rxjs';
 import { Location } from '@angular/common'; // 导入Location服务
->>>>>>> b5099c3 (Initial commit with all files)
 
 @Component({
   selector: 'app-login',
   standalone: true,
-<<<<<<< HEAD
-  imports: [CommonModule, FormsModule],
-=======
   imports: [CommonModule, FormsModule,],
->>>>>>> b5099c3 (Initial commit with all files)
   template: `
     <div class="login-container">
       <div class="login-card">
         <div class="login-header">
-<<<<<<< HEAD
-          <img src="assets/logo.svg" alt="Logo" class="logo">
-=======
           <img src="logo.svg" alt="Logo" class="logo">
->>>>>>> b5099c3 (Initial commit with all files)
           <h1>問卷管理系統</h1>
         </div>
 
@@ -288,23 +277,20 @@ export class LoginComponent {
   showPassword = false;
   isLoading = false;
   errorMessage = '';
-<<<<<<< HEAD
-=======
-  hasRefreshed = true;
+  hasRefreshed = false;
+
+
+  // 定義一個物件或全局變數來儲存刷新狀態
+
 
 
   private routeSubscription: Subscription | undefined;
->>>>>>> b5099c3 (Initial commit with all files)
 
   constructor(
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute
-<<<<<<< HEAD
-  ) {}
-=======
   ) { }
->>>>>>> b5099c3 (Initial commit with all files)
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
@@ -318,14 +304,9 @@ export class LoginComponent {
 
     this.authService.login(this.credentials).subscribe({
       next: () => {
-<<<<<<< HEAD
-        const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
-        this.router.navigate([returnUrl]);
-=======
         const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/new/dashboard';
         this.router.navigate([returnUrl]);
         this.hasRefreshed = false; // 設定標誌為未刷新
->>>>>>> b5099c3 (Initial commit with all files)
       },
       error: (error) => {
         this.errorMessage = '帳號或密碼錯誤';
@@ -333,34 +314,8 @@ export class LoginComponent {
       }
     });
   }
-<<<<<<< HEAD
-}
-=======
 
 
-  ngOnInit(): void {
-
-
-
-    this.routeSubscription = this.router.events.subscribe(() => {
-      if (this.router.url.includes('/login')) {
-        console.log('Navigated to login');
-        // 執行初始化邏輯
-        if (!this.hasRefreshed) {
-          this.hasRefreshed = true;  // 設定標誌為已刷新
-
-          setTimeout(() => {
-            this.refreshPage();
-          }, 1000);
-
-        }
-        else if (!this.router.url.includes('/login')) {
-          this.hasRefreshed = false;  // 設定標誌為未刷新
-
-        }
-      }
-    });
-  }
 
   ngOnDestroy(): void {
     // 記得取消訂閱以避免內存洩漏
@@ -370,14 +325,13 @@ export class LoginComponent {
   }
 
 
-  // ngOnInit(): void {
 
+  // ngOnInit(): void {
   //   if (!this.hasRefreshed) {
-  //     this.hasRefreshed = true;  // 設定標誌為已刷新
-  //     // 延遲1秒後刷新頁面
   //     setTimeout(() => {
   //       this.refreshPage();
-  //     }, 1000); // 1000毫秒，即1秒
+  //       this.hasRefreshed = true;
+  //     }, 2000);
   //   }
   // }
 
@@ -393,4 +347,3 @@ export class LoginComponent {
 
 
 
->>>>>>> b5099c3 (Initial commit with all files)

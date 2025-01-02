@@ -16,43 +16,6 @@ interface UserSegment {
   imports: [CommonModule, DecimalPipe],
   template: `
     <div class="segments-container">
-<<<<<<< HEAD
-      <div *ngFor="let segment of segments" class="segment-card">
-        <div class="segment-header">
-          <h3>{{ segment.name }}</h3>
-          <span class="user-count">{{ segment.users }} 用戶</span>
-        </div>
-
-        <div class="segment-metrics">
-          <div class="metric">
-            <span class="label">平均完成時間</span>
-            <span class="value">{{ segment.avgCompletionTime | number:'1.0-0' }}秒</span>
-          </div>
-          <div class="metric">
-            <span class="label">完成率</span>
-            <span class="value">{{ segment.completionRate | percent:'1.0-0' }}</span>
-          </div>
-        </div>
-
-        <div class="characteristics">
-          <h4>特徵標籤</h4>
-          <div class="tags">
-            <span *ngFor="let char of segment.characteristics" class="tag">
-              {{ char }}
-            </span>
-          </div>
-        </div>
-
-        <div class="preferences">
-          <h4>偏好選擇</h4>
-          <ul>
-            <li *ngFor="let choice of segment.preferredChoices">
-              {{ choice }}
-            </li>
-          </ul>
-        </div>
-      </div>
-=======
       @for (segment of segments; track segment.name) {
         <div class="segment-card">
           <div class="segment-header">
@@ -90,7 +53,6 @@ interface UserSegment {
           </div>
         </div>
       }
->>>>>>> b5099c3 (Initial commit with all files)
     </div>
   `,
   styles: [`

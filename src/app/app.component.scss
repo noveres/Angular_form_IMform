@@ -20,11 +20,7 @@
 }
 
 .sidebar {
-<<<<<<< HEAD
-  width: 250px;
-=======
   width: 280px;
->>>>>>> b5099c3 (Initial commit with all files)
   background: linear-gradient(180deg, #2c3e50 0%, #3498db 100%);
   color: white;
   transition: width 0.3s ease;
@@ -32,12 +28,10 @@
   flex-direction: column;
   overflow-y: auto;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-=======
   position: relative;
   z-index: 100;
-  overflow: visible; /* 確保子元素可以超出邊界 */
->>>>>>> b5099c3 (Initial commit with all files)
+  overflow: visible;
+  /* 確保子元素可以超出邊界 */
 
   .sidebar-header {
     padding: 20px;
@@ -69,12 +63,6 @@
       color: white;
       cursor: pointer;
       padding: 5px;
-<<<<<<< HEAD
-      transition: transform 0.3s ease;
-
-      &:hover {
-        opacity: 0.8;
-=======
       transition: all 0.3s ease;
       position: absolute;
       right: -15px;
@@ -95,7 +83,6 @@
 
       i {
         transition: transform 0.3s ease;
->>>>>>> b5099c3 (Initial commit with all files)
       }
     }
   }
@@ -194,21 +181,14 @@
   overflow: hidden;
   position: relative;
   background-color: #f5f5f5;
-<<<<<<< HEAD
-=======
   z-index: 1;
   margin-left: 20px;
->>>>>>> b5099c3 (Initial commit with all files)
 
   .content-header {
     padding: 20px;
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-    z-index: 1;
-=======
     z-index: 2;
->>>>>>> b5099c3 (Initial commit with all files)
 
     h1 {
       margin: 0;
@@ -222,7 +202,7 @@
     padding: 20px;
     overflow-y: auto;
     position: relative;
-    
+
     &.animating {
       pointer-events: none;
     }
@@ -235,15 +215,11 @@
     width: 60px;
 
     .collapse-btn {
-<<<<<<< HEAD
-      transform: rotate(180deg);
-=======
       i {
         transform: rotate(180deg);
         z-index: 101;
         background-color: #2c3e50;
       }
->>>>>>> b5099c3 (Initial commit with all files)
     }
 
     .logo-container h2,

@@ -18,11 +18,7 @@ interface Questionnaire {
     <div class="questionnaire-list">
       <div class="header">
         <h1>問卷列表</h1>
-<<<<<<< HEAD
-        <button class="btn-primary" routerLink="/questionnaires/new">新增問卷</button>
-=======
         <button class="btn-primary" routerLink="questionnaire-form">新增問卷</button>
->>>>>>> b5099c3 (Initial commit with all files)
       </div>
 
       <div class="filters">

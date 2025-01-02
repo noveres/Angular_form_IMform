@@ -10,35 +10,20 @@
         <mat-form-field appearance="outline">
           <mat-label>用戶名</mat-label>
           <input matInput formControlName="username" placeholder="輸入用戶名">
-<<<<<<< HEAD
-          <mat-error *ngIf="userForm.get('username')?.errors?.['required']">
-            用戶名為必填項
-          </mat-error>
-=======
           @if (userForm.get('username')?.errors?.['required']) {
             <mat-error>用戶名為必填項</mat-error>
           }
->>>>>>> b5099c3 (Initial commit with all files)
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>電子郵件</mat-label>
           <input matInput formControlName="email" placeholder="輸入電子郵件">
-<<<<<<< HEAD
-          <mat-error *ngIf="userForm.get('email')?.errors?.['required']">
-            電子郵件為必填項
-          </mat-error>
-          <mat-error *ngIf="userForm.get('email')?.errors?.['email']">
-            請輸入有效的電子郵件地址
-          </mat-error>
-=======
           @if (userForm.get('email')?.errors?.['required']) {
             <mat-error>電子郵件為必填項</mat-error>
           }
           @if (userForm.get('email')?.errors?.['email']) {
             <mat-error>請輸入有效的電子郵件地址</mat-error>
           }
->>>>>>> b5099c3 (Initial commit with all files)
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -50,16 +35,6 @@
           </mat-select>
         </mat-form-field>
 
-<<<<<<< HEAD
-        <mat-form-field appearance="outline" *ngIf="isEdit">
-          <mat-label>狀態</mat-label>
-          <mat-select formControlName="status">
-            <mat-option [value]="UserStatus.ACTIVE">啟用</mat-option>
-            <mat-option [value]="UserStatus.INACTIVE">停用</mat-option>
-            <mat-option [value]="UserStatus.SUSPENDED">凍結</mat-option>
-          </mat-select>
-        </mat-form-field>
-=======
         @if (isEdit) {
           <mat-form-field appearance="outline">
             <mat-label>狀態</mat-label>
@@ -70,7 +45,6 @@
             </mat-select>
           </mat-form-field>
         }
->>>>>>> b5099c3 (Initial commit with all files)
       </div>
 
       <!-- 個人資料 -->
@@ -98,28 +72,6 @@
         </mat-form-field>
       </div>
 
-<<<<<<< HEAD
-      <!-- 設置 -->
-      <div class="form-section" formGroupName="settings" *ngIf="isEdit">
-        <h3>用戶設置</h3>
-        
-        <mat-form-field appearance="outline">
-          <mat-label>語言</mat-label>
-          <mat-select formControlName="language">
-            <mat-option value="zh">中文</mat-option>
-            <mat-option value="en">English</mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-          <mat-label>主題</mat-label>
-          <mat-select formControlName="theme">
-            <mat-option value="light">淺色</mat-option>
-            <mat-option value="dark">深色</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-=======
       @if (isEdit) {
         <div class="form-section" formGroupName="settings">
           <h3>用戶設置</h3>
@@ -141,7 +93,6 @@
           </mat-form-field>
         </div>
       }
->>>>>>> b5099c3 (Initial commit with all files)
     </mat-dialog-content>
 
     <mat-dialog-actions align="end">

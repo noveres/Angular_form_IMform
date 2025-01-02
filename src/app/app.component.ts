@@ -21,8 +21,10 @@ export class AppComponent implements OnInit {
   hasNotifications = true;
   currentPage = '';
   isLoginPage = false;
+  isRefreshed = false;
   title: any;
   initialNavigation: boolean | undefined;
+
   toggleSidebar() {
     this.isSidebarCollapsed = !this.isSidebarCollapsed;
   }
@@ -39,10 +41,19 @@ export class AppComponent implements OnInit {
 
       this.currentPage = this.getPageTitle(event.url);
       this.isLoginPage = event.url == '/login';
-
-      if (event.url === '/' || event.url === '') {
-        window.location.reload();
+     
+      const url = typeof event.url === 'string' ? event.url.replace(/[#?].*$/, '').trim() : '';
+      if (url === '/' || url === ''||/^\/?(login|l|lo|log|logi)?$/i.test(event.url)) {
+          this.isLoginPage = true;
+          this.isRefreshed = true;
       }
+
+      else if(this.isRefreshed == false) {
+         this.isRefreshed = true;
+        // location.reload();
+        //記得放加載畫面
+      }
+      
     });
   }
   isLoggedIn(): boolean {
@@ -77,7 +88,7 @@ export class AppComponent implements OnInit {
       case 'admin':
         return '管理員';
       case 'user':
-        return '一般用戶';
+        return '研發部';
       default:
         return '';
     }

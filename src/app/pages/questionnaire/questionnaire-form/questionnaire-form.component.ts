@@ -82,70 +82,6 @@ interface Question {
       </mat-card>
 
       <div cdkDropList (cdkDropListDropped)="drop($event)" class="questions-list">
-<<<<<<< HEAD
-        <mat-card *ngFor="let question of questions; let i = index" class="question-card" cdkDrag>
-          <div class="drag-handle" cdkDragHandle>
-            <mat-icon>drag_indicator</mat-icon>
-          </div>
-          
-          <mat-card-content>
-            <div class="question-header">
-              <mat-form-field appearance="outline" class="question-title">
-                <mat-label>問題 {{i + 1}}</mat-label>
-                <input matInput [(ngModel)]="question.title" placeholder="輸入問題" required>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" class="question-type">
-                <mat-label>類型</mat-label>
-                <mat-select [(ngModel)]="question.type" (ngModelChange)="onQuestionTypeChange(question, $event)">
-                  <mat-option value="text">文字</mat-option>
-                  <mat-option value="textarea">長文字</mat-option>
-                  <mat-option value="radio">單選</mat-option>
-                  <mat-option value="checkbox">多選</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-            <mat-form-field *ngIf="question.type !== 'text' && question.type !== 'textarea'"
-                          appearance="outline" class="full-width">
-              <mat-label>描述 (選填)</mat-label>
-              <textarea matInput [(ngModel)]="question.description" rows="2" 
-                        placeholder="輸入問題描述"></textarea>
-            </mat-form-field>
-
-            <div *ngIf="question.type === 'radio' || question.type === 'checkbox'" class="options-list">
-              <div *ngFor="let option of question.options; let j = index" class="option-item">
-                <mat-form-field appearance="outline" class="option-input">
-                  <mat-label>選項 {{j + 1}}</mat-label>
-                  <input matInput [(ngModel)]="question.options[j]" placeholder="輸入選項">
-                  <button mat-icon-button matSuffix color="warn" 
-                          (click)="deleteOption(question, j)"
-                          [disabled]="question.options.length <= 2">
-                    <mat-icon>remove_circle</mat-icon>
-                  </button>
-                </mat-form-field>
-              </div>
-              
-              <button mat-stroked-button color="primary" 
-                      (click)="addOption(question)" class="add-option-btn">
-                <mat-icon>add</mat-icon>
-                添加選項
-              </button>
-            </div>
-
-            <mat-checkbox [(ngModel)]="question.required" color="primary">
-              必填題目
-            </mat-checkbox>
-          </mat-card-content>
-
-          <mat-card-actions align="end">
-            <button mat-icon-button color="warn" (click)="deleteQuestion(question.id)"
-                    matTooltip="刪除問題">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </mat-card-actions>
-        </mat-card>
-=======
         @for (question of questions; track question.id) {
           <mat-card class="question-card" cdkDrag>
             <div class="drag-handle" cdkDragHandle>
@@ -215,7 +151,6 @@ interface Question {
             </mat-card-actions>
           </mat-card>
         }
->>>>>>> b5099c3 (Initial commit with all files)
       </div>
 
       <div class="add-question-section">
@@ -341,7 +276,7 @@ export class QuestionnaireFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -445,8 +380,8 @@ export class QuestionnaireFormComponent implements OnInit {
         return false;
       }
 
-      if ((question.type === 'radio' || question.type === 'checkbox') && 
-          question.options.length < 2) {
+      if ((question.type === 'radio' || question.type === 'checkbox') &&
+        question.options.length < 2) {
         this.snackBar.open('選擇題至少需要兩個選項', '關閉', { duration: 3000 });
         return false;
       }

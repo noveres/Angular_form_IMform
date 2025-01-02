@@ -27,7 +27,7 @@ interface User {
         <select [(ngModel)]="roleFilter" class="filter-select">
           <option value="">所有角色</option>
           <option value="admin">管理員</option>
-          <option value="user">一般用戶</option>
+          <option value="user">研發部</option>
         </select>
         <select [(ngModel)]="statusFilter" class="filter-select">
           <option value="">所有狀態</option>
@@ -233,7 +233,7 @@ export class UserListComponent {
   getRoleText(role: string): string {
     const roleMap: { [key: string]: string } = {
       admin: '管理員',
-      user: '一般用戶'
+      user: '研發部'
     };
     return roleMap[role] || role;
   }

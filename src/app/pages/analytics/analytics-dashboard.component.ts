@@ -31,22 +31,6 @@ import { IUser } from '../../interfaces/user.interface';
       <section class="user-segments">
         <h2>用戶分群</h2>
         <div class="segment-cards">
-<<<<<<< HEAD
-          <div *ngFor="let segment of userSegments" class="segment-card">
-            <h3>{{ segment.name }}</h3>
-            <p>平均完成時間: {{ segment.avgCompletionTime | number:'1.0-0' }} 秒</p>
-            <p>完成率: {{ segment.completionRate | percent:'1.0-0' }}</p>
-            <p>職業: {{ segment.occupation }}</p>
-            <div class="preferred-choices">
-              <h4>偏好選擇:</h4>
-              <ul>
-                <li *ngFor="let choice of segment.preferredChoices">
-                  {{ choice }}
-                </li>
-              </ul>
-            </div>
-          </div>
-=======
           @for (segment of userSegments; track segment.id) {
             <div class="segment-card">
               <h3>{{ segment.name }}</h3>
@@ -63,7 +47,6 @@ import { IUser } from '../../interfaces/user.interface';
               </div>
             </div>
           }
->>>>>>> b5099c3 (Initial commit with all files)
         </div>
       </section>
     </div>

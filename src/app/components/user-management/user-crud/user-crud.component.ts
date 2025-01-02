@@ -24,33 +24,21 @@ interface User {
           <div class="form-group">
             <label for="name">姓名</label>
             <input id="name" type="text" formControlName="name" class="form-control">
-<<<<<<< HEAD
-            <div *ngIf="userForm.get('name')?.errors?.['required'] && userForm.get('name')?.touched" class="error-message">
-              姓名為必填項
-            </div>
-=======
             @if (userForm.get('name')?.errors?.['required'] && userForm.get('name')?.touched) {
               <div class="error-message">
                 姓名為必填項
               </div>
             }
->>>>>>> b5099c3 (Initial commit with all files)
           </div>
 
           <div class="form-group">
             <label for="email">電子郵件</label>
             <input id="email" type="email" formControlName="email" class="form-control">
-<<<<<<< HEAD
-            <div *ngIf="userForm.get('email')?.errors?.['email'] && userForm.get('email')?.touched" class="error-message">
-              請輸入有效的電子郵件地址
-            </div>
-=======
             @if (userForm.get('email')?.errors?.['email'] && userForm.get('email')?.touched) {
               <div class="error-message">
                 請輸入有效的電子郵件地址
               </div>
             }
->>>>>>> b5099c3 (Initial commit with all files)
           </div>
 
           <div class="form-group">
@@ -62,17 +50,11 @@ interface User {
             <button type="submit" [disabled]="!userForm.valid" class="btn-primary">
               {{ editingUser ? '更新' : '新增' }}
             </button>
-<<<<<<< HEAD
-            <button type="button" *ngIf="editingUser" (click)="cancelEdit()" class="btn-secondary">
-              取消
-            </button>
-=======
             @if (editingUser) {
               <button type="button" (click)="cancelEdit()" class="btn-secondary">
                 取消
               </button>
             }
->>>>>>> b5099c3 (Initial commit with all files)
           </div>
         </form>
       </div>
@@ -91,24 +73,6 @@ interface User {
         </div>
 
         <div class="user-list">
-<<<<<<< HEAD
-          <div *ngFor="let user of filteredUsers" class="user-item">
-            <div class="user-info">
-              <h4>{{ user.name }}</h4>
-              <p>{{ user.email }}</p>
-              <p class="occupation">{{ user.occupation }}</p>
-              <p class="timestamps">
-                建立時間: {{ user.createdAt | date:'short' }}
-                <br>
-                最後活動: {{ user.lastActive | date:'short' }}
-              </p>
-            </div>
-            <div class="user-actions">
-              <button (click)="editUser(user)" class="btn-edit">編輯</button>
-              <button (click)="deleteUser(user.id)" class="btn-delete">刪除</button>
-            </div>
-          </div>
-=======
           @for (user of filteredUsers; track user.id) {
             <div class="user-item">
               <div class="user-info">
@@ -127,7 +91,6 @@ interface User {
               </div>
             </div>
           }
->>>>>>> b5099c3 (Initial commit with all files)
         </div>
       </div>
     </div>

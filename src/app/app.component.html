@@ -1,91 +1,8 @@
-<<<<<<< HEAD
-<div *ngIf="isLoginPage">
-  <div class="login-overlay">
+@if (isLoginPage) {
+  <div class="login-container">
     <router-outlet></router-outlet>
   </div>
-</div>
-
-<div *ngIf="!isLoginPage">
-  <div class="app-wrapper">
-    <div class="app-container" [class.sidebar-collapsed]="isSidebarCollapsed">
-      <!-- Sidebar -->
-      <nav class="sidebar">
-        <div class="sidebar-header">
-          <div class="logo-container">
-            <img src="assets/logo.svg" alt="Logo" class="logo">
-            <h2 *ngIf="!isSidebarCollapsed">問卷管理系統</h2>
-          </div>
-          <button class="collapse-btn" (click)="toggleSidebar()">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-        </div>
-
-        <div class="user-info" *ngIf="!isSidebarCollapsed">
-          <img [src]="currentUser?.avatar" alt="User Avatar" class="user-avatar">
-          <div class="user-details">
-            <span class="user-name">{{ currentUser?.name }}</span>
-            <span class="user-role">{{ getRoleText(currentUser?.role) }}</span>
-          </div>
-        </div>
-
-        <ul class="nav-links">
-          <li>
-            <a routerLink="/dashboard" routerLinkActive="active">
-              <i class="fas fa-chart-line"></i>
-              <span *ngIf="!isSidebarCollapsed">儀表板</span>
-            </a>
-          </li>
-          <li>
-            <a routerLink="/questionnaires" routerLinkActive="active">
-              <i class="fas fa-clipboard-list"></i>
-              <span *ngIf="!isSidebarCollapsed">問卷列表</span>
-            </a>
-          </li>
-          <li>
-            <a routerLink="/users" routerLinkActive="active">
-              <i class="fas fa-users"></i>
-              <span *ngIf="!isSidebarCollapsed">用戶管理</span>
-            </a>
-          </li>
-          <li>
-            <a routerLink="/external-forms" routerLinkActive="active">
-              <i class="fas fa-file-alt"></i>
-              <span *ngIf="!isSidebarCollapsed">外部表單</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="sidebar-footer">
-          <button class="logout-btn" (click)="logout()">
-            <i class="fas fa-sign-out-alt"></i>
-            <span *ngIf="!isSidebarCollapsed">登出</span>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Main Content -->
-      <main class="main-content">
-        <header class="main-header">
-          <h1>{{ currentPage }}</h1>
-          <div class="header-actions">
-            <button class="notification-btn" [class.has-notifications]="hasNotifications">
-              <i class="fas fa-bell"></i>
-            </button>
-          </div>
-        </header>
-        <div class="content-wrapper">
-          <router-outlet></router-outlet>
-        </div>
-      </main>
-    </div>
-  </div>
-</div>
-=======
-@if (isLoginPage) {
-<div class="login-overlay">
-  <router-outlet></router-outlet>
-</div>main
-}
+  }
 
 @if (!isLoginPage) {
 <div class="app-wrapper">
@@ -162,7 +79,7 @@
     <!-- Main Content -->
     <main class="main-content">
       <header class="main-header">
-        <h1>{{ currentPage }}</h1>
+      
         <div class="header-actions">
           <button title="Toggle Sidebar" class="notification-btn" [class.has-notifications]="hasNotifications">
             <i class="fas fa-bell"></i>
@@ -176,4 +93,3 @@
   </div>
 </div>
 }
->>>>>>> b5099c3 (Initial commit with all files)
